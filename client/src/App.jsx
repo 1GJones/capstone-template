@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/welcome" element={<WelcomePage />} />
-        <Route path="/"element={<RegisterPage/>}/>
+        {/* <Route path="/"element={<RegisterPage/>}/> */}
       </Routes></>
       // )}
   );
