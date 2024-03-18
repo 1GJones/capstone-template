@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import {Container,Row,Col,InputGroup, Form, Button} from "react-bootstrap";
 import{useNavigate}from "react-router-dom";
-// import{LandingHeader, LoadingSpinner} from "../components";
+// import{Header, LoadingSpinner} from "../components";
 // import{setAuthToken} from "../utils/api.utils"
 
 const intialState ={

@@ -1,20 +1,19 @@
-import React,{ useState } from 'react'
-import{Navigate,Route,Routes} from "react-router-dom";
-import LoginPage from './pages/LoginPage';
-import WelcomePage from './pages/WelcomePage';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
-import{Container,Row,Col}from "react-bootstrap";
+import { Route,Routes } from "react-router-dom";
+import "./App.css";
+import Header from './components/Header';
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage"
 
 function App() {
 
   return (
       <>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/welcome" element={<WelcomePage />} />
-        {/* <Route path="/"element={<RegisterPage/>}/> */}
-      </Routes></>
-      // )}
+        <Header/>
+        <Routes>
+          <Route path ="/register" element={<RegisterPage/>}/>
+          <Route path ="/login"element={<LoginPage/>}/>
+        </Routes>
+    </>
   );
 };
 
