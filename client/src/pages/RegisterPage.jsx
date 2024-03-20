@@ -1,9 +1,26 @@
 import React, { useState } from "react";
-import { Container, Row, Col, InputGroup, Form, Button } from "react-bootstrap";
-import {Link, useNavigate } from "react-router-dom";
+import { Container,  InputGroup, Form, Button } from "react-bootstrap";
+import {Link,  } from "react-router-dom";
 //  // // import { useProvideAuth } from "../../hooks/useAuth";
 // // import { AvatarPicker, LandingHeader, LoadingSpinner } from "../../components";
-// // import { setAuthToken } from "../../utils/api.utils";
+// import { setAuthToken } from "../../utils/api.utils";
+
+
+const useAuth=()=>{
+  const handleSignUp = async (username, password, confirmPassword) => {
+    console.log("Signing up...");
+    console.log("Username:", username);
+    console.log("Password:", password);
+    console.log("Confirm Password:", confirmPassword);
+    // Add your signup logic here
+  };
+
+  return { handleSignUp };
+};
+  
+
+
+
 
 const intialState = {
   username: "",
@@ -15,17 +32,21 @@ const intialState = {
 };
 const imgs = ["/"];
 
-const RegisterPage = () => {
+function RegisterPage () {
   const [formData, setFormData] = useState(intialState);
   const [errors, setErrors] = useState(intialState);
-  // const auth =useProvideAuth();
+  const {handleSignUp}=useAuth()
 
-  // const [profileImage, setProfileImage]=useState(getRandomProfileUrl())
-  // function getRandomProfileUrl(){
-  //     // generates random pic in img
-  //     let img = imgs[Math.floor(Math.random() * imgs.length)];
-  //     return img
-  // }
+  const handleSubmit= async(e)=>{
+e.preventDefault()
+
+const {username,password,confirmPassword}=formData;
+
+ await handleSignUp(username,password,confirmPassword)
+
+  }
+
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -33,10 +54,6 @@ const RegisterPage = () => {
     });
   };
 
-  // const  handleSignup = async (e)=>{
-  //     const form = e.currentTarget;
-  //     e.preventDefault();
-  //     e.stopPropagation();
 
   // if (
   //     form.checkValidity()=== false ||
@@ -78,9 +95,9 @@ const RegisterPage = () => {
   //       };
 
   return (
-    <Container>
-    <h1>Create an Account</h1>
-    <Form className="auth-form" onSubmit={() => {}}>
+    <Container className="d-flex justify-content-center align-items-center h-100">
+     <h1>Create an Account</h1>
+    <Form className="auth-form" onSubmit={handleSubmit}>
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
         <InputGroup hasValidation>

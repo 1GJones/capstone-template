@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import {Container,Row,Col,InputGroup, Form, Button} from "react-bootstrap";
-import{useNavigate}from "react-router-dom";
+import{ useNavigate}from "react-router-dom";
 // import{Header, LoadingSpinner} from "../components";
 // import{setAuthToken} from "../utils/api.utils"
 
@@ -28,9 +28,7 @@ const LoginPage =()=>{
     
 
 return(
-    <div style ={{ overflow: "auto",height: "100vh"}}>
-        <Container className="mb-5">
-            <Row className="pt-5 justify-content-center">
+    <Container className="d-flex justify-content-center align-items-center h-100">
                 <Form 
                 noValidate
                 validated
@@ -96,8 +94,6 @@ return(
                         </Button>
                     </Row>
                 </Form>
-                </Row>
         </Container>
-    </div>
 )}
 export default LoginPage;
