@@ -7,9 +7,9 @@ const useAuth = () => {
   const { state, dispatch } = useContext(authContext);
 
   const handleSignUp = async (username, password, confirmpassword) => {
-   const response = await signUp(username, password, confirmpassword);
- console.log(response) 
-  await signIn(username, password);
+    const response = await signUp(username, password, confirmpassword);
+    console.log(response);
+    await signIn(username, password);
   };
 
   const handleSignIn = async (username, password) => {
@@ -20,11 +20,11 @@ const useAuth = () => {
   const handleSignOut = () => {
     dispatch({ type: SIGNOUT });
   };
-  return{
+  return {
     ...state,
     handleSignUp,
     handleSignIn,
     handleSignOut,
-  }
+  };
 };
-export default useAuth
+export default useAuth;

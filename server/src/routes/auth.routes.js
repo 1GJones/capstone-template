@@ -3,11 +3,11 @@
  import{
     validatesSignIn,
     validatesSignUp,
- }from "../middleware/validation.middleware"
+ }from "../middleware/validation.middleware";
 
  const router =Router()
 
  router.post ("/signup", validatesSignUp, handleSignUp)
- router.post("/signin", validatesSignIn, handleSignIn)
+ router.post ("/signin", validatesSignIn, handleSignIn)
 
- export default router;
+ export default router; 
