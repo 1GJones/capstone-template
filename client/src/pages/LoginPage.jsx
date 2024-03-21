@@ -7,7 +7,7 @@ import {Link,  } from "react-router-dom";
 
 
 const useAuth=()=>{
-  const handleSignUp = async (username, password, confirmPassword) => {
+  const handleSignUp = async (username, password, confirmPassword,email) => {
     console.log("Signing up...");
     console.log("Username:", username);
     console.log("Password:", password);
@@ -24,9 +24,8 @@ const useAuth=()=>{
 
 const intialState = {
   username: "",
-  // email:"",
+  email:"",
   password: "",
-  confirmPassword: "",
   isSubmitting: false,
   errorMessage: null,
 };
@@ -40,9 +39,9 @@ function LoginPage () {
   const handleSubmit= async(e)=>{
 e.preventDefault()
 
-const {username,password,confirmPassword}=formData;
+const {username,password,email}=formData;
 
- await handleSignUp(username,password,confirmPassword)
+ await handleSignUp(username,password,email)
 
   }
 
@@ -115,6 +114,26 @@ const {username,password,confirmPassword}=formData;
            {errors.username}
           </Form.Control.Feedback>
       </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Email</Form.Label>
+          <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+          <Form.Control
+            type="text"
+            name="email"
+            placeholder="email"
+            autoComplete="off"
+            required
+            value={formData.email}
+            onChange={handleInputChange}
+            style={{ borderColor: "red" }}
+          />
+            <Form.Control.Feedback type="invalid">
+             {errors.email}
+            </Form.Control.Feedback>
+        </Form.Group>
+
+
       
       <Form.Group className="mb-3">
         <Form.Label>Password</Form.Label>
@@ -133,6 +152,8 @@ const {username,password,confirmPassword}=formData;
              {errors.password}
             </Form.Control.Feedback>
         </Form.Group>
+
+
       
 
 

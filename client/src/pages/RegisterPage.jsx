@@ -13,6 +13,7 @@ import useAuth from "../providers/AuthProvider/useAuth";
     username: "",
     password: "",
     confirmPassword: "",
+    email:"",
     isSubmitting: false,
     errorMessage: null,
   };
@@ -27,8 +28,8 @@ function RegisterPage() {
   const handleSubmit = async (e) => {
 e.preventDefault();
 
-    const { username, password, confirmPassword } = formData;
-    await handleSignUp(username, password, confirmPassword);
+    const { username, password, confirmPassword,email } = formData;
+    await handleSignUp(username, password, confirmPassword,email);
   };
 
   const handleInputChange = (e) => {
@@ -97,6 +98,24 @@ e.preventDefault();
            {errors.username}
           </Form.Control.Feedback>
       </Form.Group>
+
+      <Form.Group>
+          <Form.Label>Email</Form.Label>
+          <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+          <Form.Control
+            type="text"
+            autoComplete="off"
+            name="email"
+            required
+            value={formData.email}
+            onChange={handleInputChange}
+            style={{ borderColor: "red" }}
+          />
+            <Form.Control.Feedback type="invalid">
+             {errors.email}
+            </Form.Control.Feedback>
+        </Form.Group>
+
       
       <Form.Group className="mb-3">
         <Form.Label>Password</Form.Label>
@@ -132,6 +151,9 @@ e.preventDefault();
              {errors.confirmPassword}
             </Form.Control.Feedback>
         </Form.Group>
+
+
+
 
         <Button type="submit" className="mt-3 btn">Create Account</Button>
       </Form>
