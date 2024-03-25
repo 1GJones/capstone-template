@@ -12,7 +12,6 @@ import useAuth from "../providers/AuthProvider/useAuth";
   const initialState = {
     username: "",
     password: "",
-    confirmPassword: "",
     email:"",
     isSubmitting: false,
     errorMessage: null,
@@ -28,8 +27,8 @@ function RegisterPage() {
   const handleSubmit = async (e) => {
 e.preventDefault();
 
-    const { username, password, confirmPassword,email } = formData;
-    await handleSignUp(username, password, confirmPassword,email);
+    const { username, password, email } = formData;
+    await handleSignUp(username, password, email);
   };
 
   const handleInputChange = (e) => {

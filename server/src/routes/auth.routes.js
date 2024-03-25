@@ -1,13 +1,12 @@
- import {Router}from express
- import {handleSignIn, handleSignUp}from "../controllers/auth.controllers"
- import{
-    validatesSignIn,
-    validatesSignUp,
- }from "../middleware/validation.middleware";
+import { Router } from 'express'; 
 
- const router =Router()
+import { handleSignUp } from '../controllers/auth.controllers';
+import { validatesSignUp } from '../middleware/validation.middleware';
 
- router.post ("/signup", validatesSignUp, handleSignUp)
- router.post ("/signin", validatesSignIn, handleSignIn)
+const router = Router(); // Use Router() 
 
- export default router; 
+// Define routes
+router.post('/signup', validatesSignUp, handleSignUp);
+
+// Export the router
+export default router;
