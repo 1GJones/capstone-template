@@ -1,11 +1,14 @@
 {
-    "cSpell.words": [
-        "bycryptjs",
-        "jaimenickels",
-        "profileimg",
-        "signin",
-        "thatsanotherstory",
-        "tlds",
-        "Zipcode"
-    ]
+  "cSpell.words": [
+    "bycryptjs",
+    "communitypage",
+    "jaimenickels",
+    "profileimg",
+    "signin",
+    "SIGNOUT",
+    "signup",
+    "thatsanotherstory",
+    "tlds",
+    "Zipcode"
+  ]
 }

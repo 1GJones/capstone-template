@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lemonada:wght@300..700&display=swap');
+
+.auth-form {
+  display: block;
+  width: 350px;
+}
+
+.community-page{
+  background-color: lightblue;
+  min-height: 100vh;
+}
+
+.availableBooks{
+  text-align: center;
+  color: green;
+  font-family: "Lemonada", cursive;
+}
+
+.longInput {
+  width: 750px;
+}
+
+.displayBook {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.displayBook img {
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.displayBook p {
+  margin: 5px;
+  padding: 10px; 
+  text-align: center; 
+}
+
+
+

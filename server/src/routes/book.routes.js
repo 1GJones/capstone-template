@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { createBook } from "../services/book.service";
 import {
   handleCreateBook,
   handleFindingBook,
@@ -11,10 +10,10 @@ const bookRoutes = Router();
 bookRoutes
   // /api/books
   .route("/")
+  //Get /api/books - Gets all books
+  .get(handleFindingBook)
   // Post /api/books - Creates new book
   .post(handleCreateBook)
-  //Get /api/books - Gets all books
-  .get(handleFindingBook);
 
 bookRoutes
   // /api/books/author/:author

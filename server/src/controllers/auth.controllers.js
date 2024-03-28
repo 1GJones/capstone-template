@@ -1,13 +1,12 @@
-import { hash } from "../utils/auth.utils";
+import { hash, signJwt } from "../utils/auth.utils";
 import {
   handleGetUserByUserName,
   createUser,
   sanitizeUser,
-} from "../services/auth.services";
+} from "../services/userAuth.services";
 import { comparPassword } from "../utils/auth.utils";
 
 export async function handleSignUp(req, res) {
-  console.log("hi");
   const {
     firstName,
     lastName,
@@ -42,7 +41,6 @@ export async function handleSignUp(req, res) {
       zipCode,
       profileImg,
       favGenres,
-      role
     );
     user = sanitizeUser(user);
     console.log(user);
@@ -61,10 +59,9 @@ export async function handleSignIn(req, res) {
   if (!user || !comparPassword(password, user.passwordHash)) {
     return res.status(422).json({ error: "Invalid Username/password" });
   }
+  
+  const accessToken = signJwt(user)
   user = sanitizeUser(user);
-
-  const accessToken = "";
-
-  res.status;
-  (200).json({ user, accessToken });
+  
+  res.status(200).json({ user, accessToken });
 }

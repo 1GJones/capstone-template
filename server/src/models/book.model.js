@@ -2,15 +2,18 @@ import { Schema, model } from "mongoose";
 // const { ObjectId } = Schema.Types;
 
 const bookSchema = new Schema({
+  image_url: {
+    type: String,
+  },
   title: {
     type: String,
     required: true,
   },
-  author: {
+  authors: {
     type: String,
     required: true,
   },
-  summary: {
+  description: {
     type: String,
   },
   copies: Number,

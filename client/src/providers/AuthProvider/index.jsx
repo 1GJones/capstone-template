@@ -1,0 +1,15 @@
+import { useReducer } from "react";
+import authContext from "./authContext";
+import useAuthProvider from "./useAuthProvider";
+
+
+const AuthProvider = ({ children }) => {
+  const {state, dispatch } = useAuthProvider();
+  return (
+  <authContext.Provider value={{ state, dispatch }}>
+    {children}
+    </authContext.Provider>
+  );
+};
+
+export default AuthProvider;
