@@ -10,8 +10,7 @@ const initialState = {
   firstName: "",
   lastName: "",
   email: "",
-  streetName: "",
-  streetNum: "",
+  address: "", 
   city: "",
   state: "",
   zipCode: "",
@@ -29,11 +28,11 @@ function SignUpPage() {
     e.preventDefault();
 
     const { userName, password, confirmPassword, firstName, lastName, email,
-      streetName, streetNum, city, state, zipCode, favGenres } = formData;
+      address, city, state, zipCode, favGenres } = formData;
     
     try {
       await handleSignUp(userName, password, confirmPassword, firstName, lastName, email,
-        streetName, streetNum, city, state, zipCode, favGenres)
+        address, city, state, zipCode, favGenres)
       navigate('/communitypage') 
         
       
@@ -58,6 +57,7 @@ function SignUpPage() {
               name="userName"
               value={formData.userName}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -75,6 +75,7 @@ function SignUpPage() {
               name="password"
               value={formData.password}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -107,6 +108,7 @@ function SignUpPage() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -124,6 +126,7 @@ function SignUpPage() {
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -139,6 +142,7 @@ function SignUpPage() {
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -148,34 +152,20 @@ function SignUpPage() {
         </Col>
       </Row>
     
-      <Row>
+      <Row className="longInput">
         <Col md={6}>
           <Form.Group className="mb-3">
-            <Form.Label>Street Number</Form.Label>
-            <Form.Control
-              type="number"
-              name="streetNum"
-              value={formData.streetNum}
-              onChange={handleInputChange}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.streetNum}
-            </Form.Control.Feedback>
-          </Form.Group>
-        </Col>
-        <Col md={6}>
-          <Form.Group className="mb-3">
-            <Form.Label>Street Name</Form.Label>
+            <Form.Label>Address</Form.Label>
             <Form.Control
               type="text"
-              name="streetName"
-              value={formData.streetName}
+              name="address"
+              value={formData.address}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
-              {errors.streetName}
+              {errors.address}
             </Form.Control.Feedback>
           </Form.Group>
         </Col>
@@ -189,6 +179,7 @@ function SignUpPage() {
               name="city"
               value={formData.city}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -206,6 +197,7 @@ function SignUpPage() {
               name="state"
               value={formData.state}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -221,6 +213,7 @@ function SignUpPage() {
               name="zipCode"
               value={formData.zipCode}
               onChange={handleInputChange}
+              autoComplete="off"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -238,6 +231,7 @@ function SignUpPage() {
               name="favGenres"
               value={formData.favGenres}
               onChange={handleInputChange}
+              autoComplete="off"
             />
             <Form.Control.Feedback type="invalid">
               {errors.favGenres}

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../providers/AuthProvider/useAuth";
+import ProfilePage from "./ProfilePage";
 
 const initialState = {
   userName: "", 
@@ -69,7 +70,7 @@ if (!isAuthenticated) {
   </Container>
   )
 } else {
-  return <h1>Already logged in </h1>
+  return <ProfilePage />
 }
 }
 

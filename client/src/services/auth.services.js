@@ -7,6 +7,6 @@ export const  signIn= async  (userName, password) =>  {
 
 export const signUp = (userName, password, confirmPassword,
   firstName, lastName, email,
-  streetName, streetNum, city, state, zipCode, favGenres  ) => 
+  address, city, state, zipCode, favGenres  ) => 
   api.post("/auth/signup", {userName, password, confirmPassword, firstName, lastName, email,
-  streetName, streetNum, city, state, zipCode, favGenres })
+  address, city, state, zipCode, favGenres })

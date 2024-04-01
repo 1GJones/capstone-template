@@ -1,11 +1,18 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./header.css"
 import useAuth from "../../providers/AuthProvider/useAuth";
 
 function Header() {
 	const { isAuthenticated, user, handleSignOut } = useAuth();
+	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		handleSignOut()
+		navigate("/")
+	}
+
 	return (
 
 		<Navbar style={{ backgroundColor: "lightgray" }}  >
@@ -21,7 +28,8 @@ function Header() {
 						isAuthenticated ? (
 							<>
 								<Nav.Link className="username">Welcome, {user.userName}</Nav.Link>
-								<Nav.Link onClick={handleSignOut}>Log Out</Nav.Link>
+								<Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
+								<Nav.Link as={Link} to="/communitypage" >Public Bookshelf</Nav.Link>
 							</>
 						):
 							<>
@@ -29,7 +37,6 @@ function Header() {
 								<Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
 							</>
 					}
-					<Nav.Link as={Link} to="/communitypage" >Public Bookshelf</Nav.Link>
 
 				</Nav>
 

@@ -41,5 +41,17 @@
   text-align: center; 
 }
 
+.updateProfileBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBar {
+  border-radius: 10px;
+  border: 2px solid gray;
+}
 
 

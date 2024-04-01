@@ -26,7 +26,7 @@ const Books = () => {
 	}
 
 	const handleBookSearch = (e) => {
-		const { value} = event.target;
+		const { value} = e.target;
 		setQuery(value)
 	}
 	
@@ -34,13 +34,14 @@ const Books = () => {
 	return (
 		<>
 		   <input
+			 className="searchBar"
         type="text"
         placeholder="Search Books"
 				value={query}
 				onChange={handleBookSearch}
         style={{ float: "right" }}
       ></input> 
-			<Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+			<Grid container spacing={ 3 } columns={{ xs: 4, sm: 8, md: 12 }}>
 				{books && bookResults.map((book) => (
 					<Grid item xs={2} md={4} key={book._id} >
 						<item className='displayBook'>

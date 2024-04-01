@@ -5,13 +5,14 @@ import { signIn, signUp } from "../../services/auth.services";
 import { setAccessToken } from "../../utils/api.utils";
 
 
+
 const useAuth = () => {
   const { state, dispatch } = useContext(authContext);
 
   const handleSignUp = async (userName, password, confirmPassword, firstName, lastName, email,
-    streetName, streetNum, city, state, zipCode, favGenres) => {
+    address, city, state, zipCode, favGenres) => {
      await signUp (userName, password, confirmPassword,  firstName, lastName, email,
-        streetName, streetNum, city, state, zipCode, favGenres);
+        address, city, state, zipCode, favGenres);
         // console.log(response)
    await handleSignIn(userName, password)
   };
