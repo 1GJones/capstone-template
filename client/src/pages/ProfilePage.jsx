@@ -46,6 +46,7 @@ function ProfilePage() {
             <Form.Control
               type='text'
               name='address'
+              autoComplete='off'
               placeholder='Update your address' />
           </Form.Group>
           <Form.Group>
@@ -53,6 +54,7 @@ function ProfilePage() {
             <Form.Control
               type='text'
               name='city'
+              autoComplete='off'
               placeholder='Update your city' />
           </Form.Group>
           <Form.Group>
@@ -60,6 +62,7 @@ function ProfilePage() {
             <Form.Control
               type='text'
               name='state'
+              autoComplete='off'
               placeholder='Update your state' />
           </Form.Group>
           <Form.Group>
@@ -67,6 +70,7 @@ function ProfilePage() {
             <Form.Control
               type='text'
               name='zipCode'
+              autoComplete='off'
               placeholder='Update your zip' />
           </Form.Group>
           <Form.Group>
@@ -74,6 +78,7 @@ function ProfilePage() {
             <Form.Control
               type='text'
               name='favGenres'
+              autoComplete='off'
               placeholder='Update your Favorite Genre' />
           </Form.Group>
           <Button type='submit' onClick={handleUpdate}>Update</Button>
