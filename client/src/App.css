@@ -27,6 +27,12 @@
   justify-content: space-between;
   height: 100%;
 }
+img{
+  transition: all 0.3s ease;
+}
+img:hover{
+  transform: scale(1.1);
+}
 
 .displayBook img {
   margin: 0 auto;

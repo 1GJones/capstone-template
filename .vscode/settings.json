@@ -10,5 +10,6 @@
     "thatsanotherstory",
     "tlds",
     "Zipcode"
-  ]
+  ],
+  "editor.tabSize": 2
 }
