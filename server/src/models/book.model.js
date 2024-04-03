@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-// const { ObjectId } = Schema.Types;
+const { ObjectId } = Schema.Types;
 
 const bookSchema = new Schema({
   image_url: {
