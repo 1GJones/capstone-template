@@ -27,6 +27,6 @@ export async function handleFindingBook(req, res) {
 
 export async function handleFindingById(req, res) {
   const { id } = req.params;
-  const book = await findBookById(id);
+  const book = await findBookById({_id: id});
   res.status(200).json(book);
 }

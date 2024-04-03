@@ -17,7 +17,7 @@ bookRoutes
 
 bookRoutes
   // /api/books/author/:author
-  .route("/books/:id")
+  .route("/:id")
   // Get /api/books/:id - find books by :id
   .get(handleFindingById);
 export default bookRoutes;
