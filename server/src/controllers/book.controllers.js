@@ -1,5 +1,5 @@
 import Book from "../models/book.model";
-import { createBook, findBookById, findBookById } from "../services/book.service";
+import { createBook, findBookById } from "../services/book.service";
 
 export async function handleCreateBook(req, res) {
   try {
@@ -26,7 +26,7 @@ export async function handleFindingBook(req, res) {
 }
 
 export async function handleFindingById(req, res) {
-  const { _id } = req.params;
-  const book = await findBookById(_id);
+  const { id } = req.params;
+  const book = await findBookById(id);
   res.status(200).json(book);
 }

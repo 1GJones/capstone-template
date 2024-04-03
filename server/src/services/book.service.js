@@ -17,7 +17,7 @@ export async function createBook(
   return newBook;
 }
 
-export async function findBookById(_id) {
-  const booksById = await Book.findById(_id);
+export async function findBookById(id) {
+  const booksById = await Book.findById(id);
   return booksById;
 }

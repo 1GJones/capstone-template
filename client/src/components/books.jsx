@@ -3,19 +3,21 @@ import { Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import Fuse from 'fuse.js'
 import axios from "axios";
+import api from "../utils/api.utils";
+import { useNavigate } from "react-router-dom";
 
 const Books = () => {
 	const [books, setBooks] = useState(null);
 	const [query, setQuery] = useState('');
 	
+	const nav = useNavigate()
 	useEffect(() => {
-		axios
-			.get("http://localhost:3001/api/books")
+		api
+			.get("/books/")
 			.then((res) => {
-				console.log(res.data)
 				setBooks(res.data)
 			})
-			.catch(error => console.log({error: error}))
+			.catch(err => console.log(err))
 	}, []);
 
 	const fuse = books ? new Fuse(books, {keys: ['title'], threshold: 0.1, }) : null;
@@ -37,10 +39,10 @@ const Books = () => {
 				{books &&
 				books.map((book) => (
 					<Grid item xs={2} md={4} key={book._id} >
-						<item className='displayBook'>
+						<span className='displayBook' onClick={ () => nav(`/book/${book._id}`)} >
 							<img src={book.image_url} />
 							<p>{book.title}</p>
-						</item>
+						</span>
 					</Grid>
 				))}
 			</Grid>
