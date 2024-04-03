@@ -25,7 +25,8 @@ function App() {
         <Route path='/signup' element={<SignUpPage />} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route element={<ProtectedRoute  />}>
-              <Route path="/communitypage" element={<CommunityPage />} exact />
+          <Route path="/communitypage" element={<CommunityPage />} exact />
+            {/* <Route path='/book/:id' element={<BookInfo/>}/> */}
         </Route>
       </Routes>
    
