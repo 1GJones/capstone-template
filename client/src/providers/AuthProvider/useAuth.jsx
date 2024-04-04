@@ -9,12 +9,35 @@ import { setAccessToken } from "../../utils/api.utils";
 const useAuth = () => {
   const { state, dispatch } = useContext(authContext);
 
-  const handleSignUp = async (userName, password, confirmPassword, firstName, lastName, email,
-    address, city, state, zipCode, favGenres) => {
-     await signUp (userName, password, confirmPassword,  firstName, lastName, email,
-        address, city, state, zipCode, favGenres);
-        // console.log(response)
-   await handleSignIn(userName, password)
+  const handleSignUp = async (
+    userName,
+    password,
+    confirmPassword,
+    firstName,
+    lastName,
+    email,
+    address,
+    city,
+    state,
+    zipCode,
+    favGenres,
+    selectedAvatar,
+  ) => {
+    await signUp(userName,
+      password,
+      confirmPassword,
+      firstName,
+      lastName,
+      email,
+      address,
+      city,
+      state,
+      zipCode,
+      favGenres,
+      selectedAvatar,
+    );
+    
+    await handleSignIn(userName, password)
   };
 
   const handleSignIn = async (userName, password) => {

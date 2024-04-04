@@ -34,7 +34,12 @@ function ProfilePage() {
 
   return (
     <>
-      <div className='updateProfileBtns'>{user.userName}'s Profile Page
+      <div className='userInfo'>
+        <p>{user.userName}'s Profile Page</p>
+        <p> {user.email}</p>
+        <p>{user.favGenres}</p>
+      </div>
+      <div className='updateProfileBtns'>
         <Button onClick={handleUserUpdate}>Update Profile</Button>
         <Button onClick={toCommunityPage}>Public Bookshelf</Button>
         <Button>Upload A Book</Button>

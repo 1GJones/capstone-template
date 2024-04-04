@@ -50,9 +50,23 @@ img:hover{
 .updateProfileBtns {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 15px;
   align-items: center;
   justify-content: center;
+}
+
+.updateProfileBtns button {
+  padding: 2px 5px;
+  font-size: 12px;
+}
+
+.userInfo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.userInfo p {
+  margin: 5px 0;
 }
 
 .searchBar {
@@ -60,4 +74,33 @@ img:hover{
   border: 2px solid gray;
 }
 
+.avatarContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+}
+
+.avatar-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  
+}
+
+.avatar-select img {
+  height: auto;
+  width: 100%;
+}
+
+.avatar-selected {
+  border: 2px solid lightblue;
+  background-color: lightblue;
+  border-radius: 50%;
+  padding: 1px;
+}
+
+.avatarProfilePic {
+  height: 40px;
+}
 

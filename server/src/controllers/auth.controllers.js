@@ -18,8 +18,8 @@ export async function handleSignUp(req, res) {
     city,
     state,
     zipCode,
-    profileImg,
     favGenres,
+    selectedAvatar,
   } = req.body;
   try {
     let user = await handleGetUserByUserName(userName);
@@ -37,8 +37,8 @@ export async function handleSignUp(req, res) {
       city,
       state,
       zipCode,
-      profileImg,
       favGenres,
+      selectedAvatar,
     );
     user = sanitizeUser(user);
     console.log(user);

@@ -12,8 +12,8 @@ export const validateSignUp = celebrate({
         city: Joi.string().required(),
         state: Joi.string().required(),
         zipCode: Joi.string().required(),
-        // profileImg: Joi.string().required(),
-        favGenres: Joi.string()
+        selectedAvatar: Joi.string().required(),
+        favGenres: Joi.string(),
     }),
 });
 

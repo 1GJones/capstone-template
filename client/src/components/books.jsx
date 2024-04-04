@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Books = () => {
 	const [books, setBooks] = useState(null);
 	const [query, setQuery] = useState('');
+	const [searchResults, setSearchResults] = useState(null)
 	
 	const nav = useNavigate()
 	useEffect(() => {
@@ -20,27 +21,33 @@ const Books = () => {
 			.catch(err => console.log(err))
 	}, []);
 
-	const fuse = books ? new Fuse(books, {keys: ['title'], threshold: 0.1, }) : null;
-	
-	if (fuse && query) {
-		const results = fuse.search(query)
-		bookResults = results.map(result => result.item)
-	}
+	useEffect(() => {
+    if (books && query) {
+      const fuse = new Fuse(books, { keys: ['title', 'authors'], threshold: 0.1 });
+      const results = fuse.search(query);
+      setSearchResults(results.map(result => result.item));
+    } else {
+      setSearchResults(null);
+    }
+  }, [books, query]);
+
 
 	const handleBookSearch = (e) => {
 		const { value} = e.target;
 		setQuery(value)
 	}
+
+	const displayBooks = searchResults || books;
 	
 	return (
 		<>
 		<input className="searchBar" type="text" placeholder="Search Books" value={query} onChange={handleBookSearch} style={{ float: "right" }}></input> 
 			<Grid container spacing={ 3 } columns={{ xs: 4, sm: 8, md: 12 }}>
-				{books &&
-				books.map((book) => (
+				{displayBooks &&
+				displayBooks.map((book) => (
 					<Grid item xs={2} md={4} key={book._id} >
 						<span className='displayBook' onClick={ () => nav(`/book/${book._id}`)} >
-							<img src={book.image_url} />
+							<img className="bookHover" src={book.image_url} />
 							<p>{book.title}</p>
 						</span>
 					</Grid>

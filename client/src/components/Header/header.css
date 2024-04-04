@@ -3,9 +3,20 @@
 .nav-brand {
   font-family: "Lobster", sans-serif;
   font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-links {
   font-family: "Lobster", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
 }
 
+.navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+}

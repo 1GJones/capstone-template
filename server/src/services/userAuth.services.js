@@ -14,8 +14,9 @@ export async function createUser(
   city,
   state,
   zipCode,
-  profileImg,
-  favGenres
+  favGenres,
+  selectedAvatar,
+
 ) {
   let user = await User.create({
     firstName,
@@ -27,8 +28,8 @@ export async function createUser(
     city,
     state,
     zipCode,
-    profileImg,
     favGenres,
+    selectedAvatar,
   });
   return user
 }

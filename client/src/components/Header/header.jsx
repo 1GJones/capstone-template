@@ -27,7 +27,7 @@ function Header() {
 					{
 						isAuthenticated ? (
 							<>
-								<Nav.Link as={Link} to='/'>Welcome, {user.userName}</Nav.Link>
+								<Nav.Link as={Link} to='/'>Welcome, {user.userName}<img  className='avatarProfilePic' src={user.selectedAvatar}/></Nav.Link>
 								<Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
 								<Nav.Link as={Link} to="/communitypage" >Public Bookshelf</Nav.Link>
 							</>

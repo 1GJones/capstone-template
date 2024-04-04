@@ -47,7 +47,7 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Zip code Required"],
     },
-    profileImg: {
+    selectedAvatar: {
       type: String,
     },
     favGenres: {
