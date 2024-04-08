@@ -4,6 +4,7 @@ const { ObjectId } = Schema.Types;
 const bookSchema = new Schema({
   image_url: {
     type: String,
+    default: "/images/default.png",
   },
   title: {
     type: String,
