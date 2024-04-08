@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import useAuth from '../providers/AuthProvider/useAuth'
 import BookUpload from '../components/Book-Upload'
 
@@ -43,7 +43,6 @@ function ProfilePage() {
         <Button onClick={handleUserUpdate}>Update Profile</Button>
         <Button onClick={toCommunityPage}>Public Bookshelf</Button>
         <BookUpload/>
-        <Button>Upload A Book</Button>
       </div>
       {updatingUser && (
         <Form>
