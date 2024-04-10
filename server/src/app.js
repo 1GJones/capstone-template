@@ -4,6 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { API_URL, DB_URL, PORT } from "./config/keys";
 import router from "./routes";
+import path from "path"
 import requestLogger from "./middleware/logger";
 
 mongoose
