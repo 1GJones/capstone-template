@@ -27,10 +27,10 @@
   justify-content: space-between;
   height: 100%;
 }
-img{
+.bookHover{
   transition: all 0.3s ease;
 }
-img:hover{
+.bookHover:hover{
   transform: scale(1.1);
 }
 
@@ -104,3 +104,36 @@ img:hover{
   height: 40px;
 }
 
+.submitReview {
+  margin-right: 30px;
+}
+
+
+
+
+.bookInfoImg {
+  width: 15%;
+  height: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.m {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.bookTitle {
+  margin-top: 40px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}

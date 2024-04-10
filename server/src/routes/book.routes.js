@@ -3,6 +3,8 @@ import {
   handleCreateBook,
   handleFindingBook,
   handleFindingById,
+  handleReviewOfBook,
+  handleFetchReviews,
 } from "../controllers/book.controllers";
 
 const bookRoutes = Router();
@@ -20,4 +22,10 @@ bookRoutes
   .route("/:id")
   // Get /api/books/:id - find books by :id
   .get(handleFindingById);
+
+  bookRoutes
+  .route("/:id/reviews")
+  .get(handleFetchReviews)
+  .post(handleReviewOfBook);
+
 export default bookRoutes;
