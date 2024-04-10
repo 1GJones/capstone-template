@@ -1,7 +1,6 @@
 import { Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import Fuse from 'fuse.js'
-import axios from "axios";
 import api from "../utils/api.utils";
 import { useNavigate } from "react-router-dom";
 
