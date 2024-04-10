@@ -24,10 +24,18 @@ const bookSchema = new Schema({
         ref: "User",
         required: true,
       },
-      review: {
+      text: {
         type: String,
         required: true,
       },
+      createdAt: {
+        type: Date,
+        default: Date,
+      },
+      stars: {
+        type: Number,
+        
+      }
     },
   ],
 });
