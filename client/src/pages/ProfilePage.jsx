@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import useAuth from '../providers/AuthProvider/useAuth'
+import BookUpload from '../components/Book-Upload'
 
 
 
@@ -26,7 +27,6 @@ function ProfilePage() {
 
   const handleUpdate = () => {
     e.preventDefault()
-   
       setUpdatingUser(false) 
 
 
@@ -42,7 +42,7 @@ function ProfilePage() {
       <div className='updateProfileBtns'>
         <Button onClick={handleUserUpdate}>Update Profile</Button>
         <Button onClick={toCommunityPage}>Public Bookshelf</Button>
-        <Button>Upload A Book</Button>
+        <BookUpload/>
       </div>
       {updatingUser && (
         <Form>
