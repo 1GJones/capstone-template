@@ -44,22 +44,22 @@ const BookUpload = () => {
       duration: 3000,
       newWindow: true,
       close: true,
-      gravity: "top", 
-      position: "center", 
+      gravity: "top",
+      position: "center",
       stopOnFocus: true,
       style: {
         background: "linear-gradient(to right, #77BB7A, #7ED9DC)",
-        color: "black"
+        color: "black",
       },
     }).showToast();
-    
+
     restForm;
   };
 
   return (
-    <Form onSubmit={handleUpload}>
+    <Form onSubmit={handleUpload} className="mb-2">
+      <h1>Upload Your Book Here</h1>
       <Form.Group className="mb-2">
-        <h1>Upload Your Book Here</h1>
         <Form.Label>Title:</Form.Label>
         <Form.Control
           type="text"
