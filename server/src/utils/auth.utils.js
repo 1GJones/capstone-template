@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken";
-import   keys from "../config/keys"
+import { JWT_SECRET, JWT_TOKENLIFE } from "../config/keys";
 
 export function hash (password){
     return bcrypt.hashSync(password, 12)
@@ -15,5 +15,5 @@ export function signJwt(user) {
         sub: user._id, 
         username: user.username,
     }
-    return jwt.sign(tokenUser, keys.jwt.secret, { expiresIn: keys.jwt.tokenLife})
+    return jwt.sign(tokenUser, JWT_SECRET, { expiresIn: JWT_TOKENLIFE})
 }
