@@ -4,6 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom'
 
 const initialState = {
   title: "",
@@ -15,6 +16,7 @@ const initialState = {
 
 const BookUpload = () => {
   const [book, setBook] = useState(initialState);
+  const navigate = useNavigate();
 
   const handleUserInput = (e) => {
     setBook({
@@ -30,6 +32,7 @@ const BookUpload = () => {
 
     try {
       await axios.post("http://localhost:3001/api/books", book);
+      navigate('/communitypage')
     } catch (error) {
       console.log(error);
       return error;
@@ -58,7 +61,6 @@ const BookUpload = () => {
 
   return (
     <Form onSubmit={handleUpload} className="mb-2">
-      <h1>Upload Your Book Here</h1>
       <Form.Group className="mb-2">
         <h1 className="bookUploadForm">Upload Your Book Here</h1>
         <Form.Label className="bookUploadForm">Title:</Form.Label>
