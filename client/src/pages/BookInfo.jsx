@@ -27,7 +27,7 @@ const BookInfo = () => {
 
   return( 
   <>
-  <Card>
+  <Card style={{ backgroundColor: '#FFDAB9'}}>
   {book &&
   <>
   <img className="bookInfoImg" src={book.image_url} alt="" />

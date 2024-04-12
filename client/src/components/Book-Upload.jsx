@@ -59,8 +59,8 @@ const BookUpload = () => {
   return (
     <Form onSubmit={handleUpload}>
       <Form.Group className="mb-2">
-        <h1>Upload Your Book Here</h1>
-        <Form.Label>Title:</Form.Label>
+        <h1 className="bookUploadForm">Upload Your Book Here</h1>
+        <Form.Label className="bookUploadForm">Title:</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -70,7 +70,7 @@ const BookUpload = () => {
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label>Author:</Form.Label>
+        <Form.Label className="bookUploadForm">Author:</Form.Label>
         <Form.Control
           type="text"
           name="authors"
@@ -79,14 +79,14 @@ const BookUpload = () => {
           autoComplete="on"
         />
       </Form.Group>
-      <Form.Label>Description:</Form.Label>
+      <Form.Label className="bookUploadForm">Description:</Form.Label>
       <Form.Control
         type="textarea"
         name="description"
         value={book.description}
         onChange={handleUserInput}
       />
-      <Form.Label>Book Image:</Form.Label>
+      <Form.Label className="bookUploadForm">Book Image:</Form.Label>
       <Form.Control
         type="file"
         name="image_url"

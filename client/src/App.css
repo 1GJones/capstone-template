@@ -55,19 +55,18 @@
   justify-content: center;
 }
 
-.updateProfileBtns button {
-  padding: 2px 5px;
-  font-size: 12px;
-}
-
 .userInfo {
   text-align: center;
   margin-bottom: 40px;
+  color: black;
 }
+
 
 .userInfo p {
   margin: 5px 0;
+  color: white;
 }
+
 
 .searchBar {
   border-radius: 10px;
@@ -137,3 +136,15 @@ input[type='radio'] {
   cursor: pointer;
   transition: color 200ms;
 }
+
+#profilePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
