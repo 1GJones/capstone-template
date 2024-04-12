@@ -41,12 +41,12 @@ const useAuth = () => {
   };
 
   const handleSignIn = async (userName, password) => {
-   signIn(userName, password).then((response) => {
+    signIn(userName, password).then((response) => {
     dispatch({ type: SIGNIN, payload: response.data.user})
     setAccessToken(response.data.accessToken)
     const localAuth = { ...response.data};
     localStorage.setItem('test-auth', JSON.stringify(localAuth))
-   })
+  })
   }
     
   const handleSignOut = () => {
