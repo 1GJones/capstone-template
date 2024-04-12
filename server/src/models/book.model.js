@@ -1,9 +1,10 @@
 import { Schema, model } from "mongoose";
-// const { ObjectId } = Schema.Types;
+const { ObjectId } = Schema.Types;
 
 const bookSchema = new Schema({
   image_url: {
     type: String,
+    default: "/images/default.png",
   },
   title: {
     type: String,
@@ -24,10 +25,18 @@ const bookSchema = new Schema({
         ref: "User",
         required: true,
       },
-      review: {
+      text: {
         type: String,
         required: true,
       },
+      createdAt: {
+        type: Date,
+        default: Date,
+      },
+      stars: {
+        type: Number,
+        
+      }
     },
   ],
 });

@@ -31,13 +31,9 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    streetNum: {
+    address: {
       type: String,
-      required: [true, "Street Number Required"],
-    },
-    streetName: {
-      type: String,
-      required: [true, "Street Name Required"],
+      required: [true, "Address Required"],
     },
     city: {
       type: String,
@@ -51,7 +47,7 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Zip code Required"],
     },
-    profileImg: {
+    selectedAvatar: {
       type: String,
     },
     favGenres: {

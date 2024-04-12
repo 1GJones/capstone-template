@@ -8,13 +8,12 @@ export const validateSignUp = celebrate({
         userName: Joi.string().required(),
         password: Joi.string().required(),
         confirmPassword: Joi.any().valid(Joi.ref("password")),
-        streetNum: Joi.number().required(),
-        streetName: Joi.string().required(),
+        address: Joi.string().required(),
         city: Joi.string().required(),
         state: Joi.string().required(),
         zipCode: Joi.string().required(),
-        // profileImg: Joi.string().required(),
-        favGenres: Joi.string()
+        selectedAvatar: Joi.string().required(),
+        favGenres: Joi.string(),
     }),
 });
 

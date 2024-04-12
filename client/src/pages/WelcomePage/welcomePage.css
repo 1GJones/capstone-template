@@ -1,0 +1,29 @@
+
+#welcomePage  {
+  background-size: cover ;
+  background-position:  center 70%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.welcome-label {
+  color: white;
+}
+
+.welcome-formtext {
+  color: white;
+}
+
+.signUp {
+  color: #212529BF;
+}
+
+.welcomeText {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  color: white;
+  font-size: 25px;
+}

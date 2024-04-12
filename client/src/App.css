@@ -27,6 +27,12 @@
   justify-content: space-between;
   height: 100%;
 }
+.bookHover{
+  transition: all 0.3s ease;
+}
+.bookHover:hover{
+  transform: scale(1.1);
+}
 
 .displayBook img {
   margin: 0 auto;
@@ -41,5 +47,110 @@
   text-align: center; 
 }
 
+.updateProfileBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.userInfo {
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+}
 
 
+.userInfo p {
+  margin: 5px 0;
+  color: white;
+}
+
+
+.searchBar {
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+
+.avatarContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+}
+
+.avatar-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  
+}
+
+.avatar-select img {
+  height: auto;
+  width: 100%;
+}
+
+.avatar-selected {
+  border: 2px solid lightblue;
+  background-color: lightblue;
+  border-radius: 50%;
+  padding: 1px;
+}
+
+.avatarProfilePic {
+  height: 40px;
+}
+
+.submitReview {
+  margin-right: 30px;
+}
+
+
+
+
+.bookInfoImg {
+  width: 15%;
+  height: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.m {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.bookTitle {
+  margin-top: 40px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
+
+#profilePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.signUpImg {
+  background-image: url("/bookBackground3.jpg") ;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}

@@ -14,13 +14,12 @@ export async function handleSignUp(req, res) {
     userName,
     password,
     confirmPassword,
-    streetNum,
-    streetName,
+    address,
     city,
     state,
     zipCode,
-    profileImg,
     favGenres,
+    selectedAvatar,
   } = req.body;
   try {
     let user = await handleGetUserByUserName(userName);
@@ -34,13 +33,12 @@ export async function handleSignUp(req, res) {
       email,
       userName,
       passwordHash,
-      streetNum,
-      streetName,
+      address,
       city,
       state,
       zipCode,
-      profileImg,
       favGenres,
+      selectedAvatar,
     );
     user = sanitizeUser(user);
     console.log(user);

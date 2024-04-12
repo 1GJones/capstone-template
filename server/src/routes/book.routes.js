@@ -2,7 +2,9 @@ import { Router } from "express";
 import {
   handleCreateBook,
   handleFindingBook,
-  handleFindingByAuthor,
+  handleFindingById,
+  handleReviewOfBook,
+  handleFetchReviews,
 } from "../controllers/book.controllers";
 
 const bookRoutes = Router();
@@ -17,7 +19,13 @@ bookRoutes
 
 bookRoutes
   // /api/books/author/:author
-  .route("/author/:author")
-  // Get /api/books/author/:author - find books by author
-  .get(handleFindingByAuthor);
+  .route("/:id")
+  // Get /api/books/:id - find books by :id
+  .get(handleFindingById);
+
+  bookRoutes
+  .route("/:id/reviews")
+  .get(handleFetchReviews)
+  .post(handleReviewOfBook);
+
 export default bookRoutes;
