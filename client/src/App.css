@@ -148,3 +148,9 @@ input[type='radio'] {
   margin-top: 20px;
 }
 
+.signUpImg {
+  background-image: url("/bookBackground3.jpg") ;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
